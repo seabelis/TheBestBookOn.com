@@ -1,19 +1,21 @@
 
-<form method="POST" action="/submit">
+<form name="recommendations-form" method="POST" onsubmit="return validateForm()" action="/submit">
   <div class="block">
     <div class="step step--1">
       <div class="picker">
         <h2>1. ⚖️ "<span class="bbo">The Best Book On</span>"</h2>
 	<div class="ui-widget" style="display: inline;">
-          <input type="text" placeholder="Physics..."
+          <input type="text" name="topic" placeholder="Physics..."
 		 class="book-topic-selector"
 		 style="max-width: 250px">
 	</div> is
         <div class="ui-widget" style="display: inline;">
           <label for="book-winner-selector"></label>
-          <input type="text" class="book-winner-selector" placeholder="Search title, author, or isbn">
-        </div>.
-      </div>
+          <input type="text" name="winner" class="book-winner-selector" placeholder="Search title, author, or isbn">
+        </div> with
+        <div class="ui-widget" style="display: inline;">
+          <input type="text" name="source" class="book-winner-url" placeholder="source">
+        </div>. 
     </div>
     
     <div class="step step--2">
@@ -21,7 +23,9 @@
         <h2>2. 📚 I know because I've also read</h2>
         <div class="ui-widget">
           <label for="book-candidate-selector"></label>
-          <input type="text" class="book-candidate-selector" placeholder="Search title, author, or isbn">
+          <input type="text" name="candidate1" class="book-candidate-selector1" placeholder="this book...">
+          <input type="text" name="candidate2" class="book-candidate-selector2" placeholder="and this one...">
+          <input type="text" name="candidate3" class="book-candidate-selector3" placeholder="as well as this...">
         </div>
       </div>
       <div class="display">
@@ -33,50 +37,8 @@
 
     <div class="step step--3">
       <div class="picker">
-        <h2>3. 📏  Score card</h2>
-        <table class="rules">
-          <thead>
-            <tr>
-              <td></td>
-              <th class="selected">Book 1</th>
-              <th>Book 2</th>
-              <th>Book 3</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>Length</th>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>Subject Accuracy</th>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>Clarity</th>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>Brevity</th>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div>
-          <div class="opt"><input type="checkbox"> Faster Paced</div>
-          <div class="opt"><input type="checkbox"> More entertaining</div>
-          <div class="opt"><input type="checkbox"> Easier to understand</div>
-        </div>
-        <input type="text" placeholder="Also must...">
+        <h2>3. 📏  Description</h2>
+        <input type="text" name="description" placeholder="about winner...">
       </div>
     </div>
   </div>
