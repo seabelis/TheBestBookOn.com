@@ -172,7 +172,4 @@ $( function() {
       return renderItem.call(this, ul, item);
     }
   }
-
- 
-
 });
